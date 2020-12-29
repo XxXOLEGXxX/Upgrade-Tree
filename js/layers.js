@@ -39,7 +39,7 @@ addLayer("u", {
                   else return false	},
 
     gainMult() {                            // Returns your multiplier to your gain of the prestige resource.
-        let mult = new Decimal(2)
+        let mult = new Decimal(1)
 		if(player.b.magnifyingLevel.gt(0)) mult = mult.div(player.b.magnifyingLevel.add(1))
 		if(hasUpgrade("b", 35)) mult = mult.pow(1.006)
 		return mult
