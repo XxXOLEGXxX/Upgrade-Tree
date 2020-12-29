@@ -40,6 +40,9 @@ function getPointGen() {
 	if(hasUpgrade("w", 11)) gain = gain.mul(2)
 	if(hasUpgrade("w", 21)) gain = gain.mul(3)
 	if(hasUpgrade("w", 31)) gain = gain.mul(5)
+	if(hasUpgrade("b", 21)) gain = gain.add(upgradeEffect("b", 21))
+	if(hasUpgrade("b", 24)) gain = gain.add(1).mul(1.5).pow(1.05)
+	if(hasUpgrade("b", 35)) gain = gain.mul(1.091)
 	return gain
 }
 
@@ -53,7 +56,7 @@ var displayThings = [
 
 // Determines when the game "ends"
 function isEndgame() {
-	return player.r.points.gte(new Decimal("5"))
+	return player.b.points.gte(new Decimal("99999999999999999999999999999999999999999999999999999999"))
 }
 
 // Less important things beyond this point!
