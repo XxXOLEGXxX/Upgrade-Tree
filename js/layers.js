@@ -102,7 +102,7 @@ addLayer("w", {
 		},
 		41: {
 			title: "c",
-			description: "You gain 10x more prestige points and wrong upgrades affects right upgrade's cost.",
+			description: "Wrong upgrades affects right upgrade's cost.",
 			cost: new Decimal(3),
 			effect() { return player.w.points.add(1).pow(player.w.points.add(1)) },
 			effectDisplay() { return "/" + format(this.effect()) },
